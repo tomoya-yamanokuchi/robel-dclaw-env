@@ -1,5 +1,10 @@
 ROBEL-D'Claw environment from goole.
 
+## レンダリングウィンドウを出さない方法
+1. envのインスタンス生成する際の `use_render` パラメータをoffにする
+2. config のis_OffscreenをTrueにする
+
+
 ## DClaw環境
 ![Screenshot from 2022-08-20 02-22-30](https://user-images.githubusercontent.com/49630508/185674226-85950dba-7e45-49fa-9070-62758f353227.png)
 

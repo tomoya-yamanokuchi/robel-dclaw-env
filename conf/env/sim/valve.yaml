@@ -68,6 +68,9 @@ light:
 
 xml:
     rgb:
-        # object: [255, 0, 0] # red
-        object: [0, 255, 0] # green
-        # object: [255, 0, 0] # blue
+        object : [
+            [255,   0,   0], # red
+            [0,   255,   0], # green
+            [0,     0, 255], # blue
+            [255, 255, 255], # white
+        ]

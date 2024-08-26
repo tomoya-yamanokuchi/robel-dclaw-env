@@ -8,3 +8,4 @@ fig
 *.pyc
 *.png
 *.npy
+!**/pattern_default_crop.png

@@ -16,8 +16,8 @@ finger_rgb = np.array([255, 127,   0], dtype=np.uint8)
 
 
 class CanonicalRGB:
-    def __init__(self, object_rgb: list):
-        self.object_rgb = np.array(object_rgb, dtype=np.uint8)
+    def __init__(self, object_rgb_list: list):
+        # self.object_rgb = np.array(object_rgb_list, dtype=np.uint8)
 
         self.rgb = {
             "floor"                    : floor_rgb,
@@ -53,10 +53,10 @@ class CanonicalRGB:
             "THL32_metal_clamping"      : robot_rgb,
             "THL32_plastic_finger"      : finger_rgb,
             # ------ valve ------
-            "vis_valve_3fin_handle_1"   : object_rgb,
-            "vis_valve_3fin_handle_2"   : object_rgb,
-            "vis_valve_3fin_handle_3"   : object_rgb,
-            "vis_valve_3fin_center"     : object_rgb,
+            "vis_valve_3fin_handle_1"   : object_rgb_list[0],
+            "vis_valve_3fin_handle_2"   : object_rgb_list[1],
+            "vis_valve_3fin_handle_3"   : object_rgb_list[2],
+            "vis_valve_3fin_center"     : object_rgb_list[3],
         }
 
 

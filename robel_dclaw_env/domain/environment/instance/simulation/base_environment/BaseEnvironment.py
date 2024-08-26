@@ -23,7 +23,7 @@ class BaseEnvironment(AbstractEnvironment):
         return mujoco_py.load_model_from_path(model_path)
 
 
-    def _step_with_inplicit_step(self, is_view):
+    def _step_with_inplicit_step(self, is_view: bool = False):
         '''
         ・一回の sim.step() では，制御入力で与えた目標位置まで到達しないため，これを避けたい時に使います
         ・sim-to-realでは1ステップの状態遷移の違いがそのままダイナミクスのreality-gapとなるため,
@@ -34,9 +34,11 @@ class BaseEnvironment(AbstractEnvironment):
             target_joint_position  = self.ctrl[:9],
         )
         for i in range(self.inplicit_step):
+            # print(f"i={i}")
             self.set_ctrl(interpolated_ctrl[i])
             self.sim.step()
-            if is_view: self.view()
+            if is_view:
+                self.view()
 
 
     def step(self, is_view=False):
